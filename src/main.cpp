@@ -1,9 +1,15 @@
-#include <Arduino.h>
+#include "board.h"
+#include "rest.api.h"
 
-void setup() {
-  // put your setup code here, to run once:
+void setup()
+{
+	Board::Setup();
+
+	API::Setup();
+	API::Start();
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
+void loop()
+{
+
 }

@@ -8,6 +8,7 @@
 #include <soc/soc.h>           // Disable brownour problems
 #include <soc/rtc_cntl_reg.h>  // Disable brownour problems
 #include <driver/rtc_io.h>
+#include <FS.h>
 
 // OV2640 CAMERA MODULE PINS
 #define PWDN_GPIO_NUM     32
@@ -76,10 +77,9 @@ class Board
             esp_err_t err = esp_camera_init(&config);
             if (err != ESP_OK)
             {
-                Serial.println("camera init failed with error 0x%x", err);
+                Serial.printf("camera init failed with error 0x%x", err);
                 ESP.restart();
             }
         }
 };
-
 #endif
